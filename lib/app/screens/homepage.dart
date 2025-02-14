@@ -29,6 +29,8 @@ class Homepage extends StatelessWidget {
                 entertainment(),
                 24.verticalSpace,
                 eWarranty(context),
+                24.verticalSpace,
+                gameList(context),
               ],
             ),
           ),
@@ -257,6 +259,60 @@ class Homepage extends StatelessWidget {
               ),
               Icon(Icons.arrow_forward_ios, color: Theme.of(context).colorScheme.secondary, size: 14.0)
             ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget gameList(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              'Games',
+              style: GoogleFonts.urbanist(
+                textStyle: TextStyle(color: Colors.black, fontSize: 18, letterSpacing: .2, fontWeight: FontWeight.w700),
+              ),
+            ),
+            Row(
+              children: [
+                Text(
+                  'See more',
+                  style: GoogleFonts.lato(
+                    textStyle: TextStyle(color: Theme.of(context).colorScheme.secondary, fontSize: 14, letterSpacing: .2, fontWeight: FontWeight.w700),
+                  ),
+                ),
+                6.horizontalSpace,
+                Icon(Icons.arrow_forward_ios, color: Theme.of(context).colorScheme.secondary, size: 14)
+              ],
+            ),
+          ],
+        ),
+        16.verticalSpace,
+        SizedBox(
+          width: double.infinity,
+          height: 130.h,
+          child: ListView.separated(
+            shrinkWrap: true,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (_, index) => Container(
+              width: 103.w,
+              height: 126.h,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10.0),
+                image: DecorationImage(
+                  image: AssetImage(games[index]["image"]),
+                  fit: BoxFit.cover,
+                )
+              ),
+            ),
+            separatorBuilder: (_, __) => 16.horizontalSpace,
+            itemCount: games.length
           ),
         ),
       ],
