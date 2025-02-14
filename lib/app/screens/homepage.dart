@@ -19,15 +19,21 @@ class Homepage extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
             child: Column(
               children: [
-                header(),
+                header(context),
                 24.verticalSpace,
-                Image.asset("assets/images/hero_image.png"), // Hero section
+                Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.white70, width: 1),
+                    borderRadius: BorderRadius.circular(16.0)
+                  ),
+                  child: Image.asset("assets/images/hero_image.png")
+                ), // Hero section
                 24.verticalSpace,
                 support(context),
                 24.verticalSpace,
-                trending(),
+                trending(context),
                 24.verticalSpace,
-                entertainment(),
+                entertainment(context),
                 24.verticalSpace,
                 eWarranty(context),
                 24.verticalSpace,
@@ -42,7 +48,7 @@ class Homepage extends StatelessWidget {
     );
   }
 
-  Widget header() {
+  Widget header(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -50,10 +56,13 @@ class Homepage extends StatelessWidget {
         Text(
           'My Symphony',
           style: GoogleFonts.urbanist(
-            textStyle: TextStyle(color: Colors.black, fontSize: 18, letterSpacing: .2, fontWeight: FontWeight.w700),
+            textStyle: Theme.of(context).textTheme.labelLarge,
           ),
         ),
-        SvgPicture.asset("assets/vectors/menu.svg")
+        SvgPicture.asset(
+          "assets/vectors/menu.svg",
+          colorFilter: ColorFilter.mode(Theme.of(context).colorScheme.inversePrimary, BlendMode.srcIn)
+        )
       ],
     );
   }
@@ -112,14 +121,14 @@ class Homepage extends StatelessWidget {
     );
   }
 
-  Widget trending() {
+  Widget trending(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'Trending Items',
           style: GoogleFonts.urbanist(
-            textStyle: TextStyle(color: Colors.black, fontSize: 18, letterSpacing: .2, fontWeight: FontWeight.w700),
+            textStyle: Theme.of(context).textTheme.labelLarge,
           ),
         ),
         16.verticalSpace,
@@ -166,14 +175,14 @@ class Homepage extends StatelessWidget {
     );
   }
 
-  Widget entertainment() {
+  Widget entertainment(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'Entertainment',
           style: GoogleFonts.urbanist(
-            textStyle: TextStyle(color: Colors.black, fontSize: 18, letterSpacing: .2, fontWeight: FontWeight.w700),
+            textStyle: Theme.of(context).textTheme.labelLarge,
           ),
         ),
         16.verticalSpace,
@@ -189,7 +198,7 @@ class Homepage extends StatelessWidget {
         Text(
           'E-warranty card',
           style: GoogleFonts.urbanist(
-            textStyle: TextStyle(color: Colors.black, fontSize: 18, letterSpacing: .2, fontWeight: FontWeight.w700),
+            textStyle: Theme.of(context).textTheme.labelLarge,
           ),
         ),
         16.verticalSpace,
@@ -286,7 +295,7 @@ class Homepage extends StatelessWidget {
             Text(
               'Games',
               style: GoogleFonts.urbanist(
-                textStyle: TextStyle(color: Colors.black, fontSize: 18, letterSpacing: .2, fontWeight: FontWeight.w700),
+                textStyle: Theme.of(context).textTheme.labelLarge,
               ),
             ),
             Row(
@@ -336,7 +345,7 @@ class Homepage extends StatelessWidget {
       height: 128.h,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(10.0),
+        borderRadius: BorderRadius.circular(16.0),
         image: DecorationImage(
           image: AssetImage("assets/images/community_banner_bg.png"),
           fit: BoxFit.cover,

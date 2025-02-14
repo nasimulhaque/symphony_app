@@ -34,7 +34,7 @@ class MyFonts {
   static double get displaySmallSize => 14.sp;
 
   //button font size
-  static double get buttonTextSize => 16.sp;
+  static double get buttonTextSize => 18.sp;
 
   //chip font size
   static double get chipTextSize => 10.sp;

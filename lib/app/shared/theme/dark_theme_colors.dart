@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 // TODO add your dark theme colors palette
 class DarkThemeColors {
   // PRIMARY
-  static const Color primaryColor = Color(0xFF000000);
+  static const Color primaryColor = Color(0xFF181818);
 
   // SECONDARY
   static Color accentColor = Color(0xFFFF002B);
@@ -12,7 +12,7 @@ class DarkThemeColors {
   static const Color appbarColor = primaryColor;
 
   //SCAFFOLD
-  static const Color scaffoldBackgroundColor = Color(0xff2D2D2D);
+  static const Color scaffoldBackgroundColor = Colors.black;
   static const Color backgroundColor = Color(0xff2D2D2D);
   static const Color dividerColor = Color(0xff686868);
   static const Color cardColor = Color(0xff1e2336);

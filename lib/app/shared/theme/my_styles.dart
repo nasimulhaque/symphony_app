@@ -22,6 +22,8 @@ class MyStyles {
   static TextTheme getTextTheme({required bool isLightTheme}) => TextTheme(
     labelLarge: MyFonts.buttonTextStyle.copyWith(
       fontSize: MyFonts.buttonTextSize,
+      letterSpacing: .2, fontWeight: FontWeight.w700,
+      color: isLightTheme ? LightThemeColors.bodyTextColor : DarkThemeColors.bodyTextColor,
     ),
     bodyLarge: (MyFonts.bodyTextStyle).copyWith(
       fontWeight: FontWeight.bold,
