@@ -25,6 +25,8 @@ class Homepage extends StatelessWidget {
                 support(context),
                 24.verticalSpace,
                 trending(),
+                24.verticalSpace,
+                entertainment()
               ],
             ),
           ),
@@ -145,6 +147,22 @@ class Homepage extends StatelessWidget {
             itemCount: trending_items.length
           ),
         ),
+      ],
+    );
+  }
+
+  Widget entertainment() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Entertainment',
+          style: GoogleFonts.urbanist(
+            textStyle: TextStyle(color: Colors.black, fontSize: 18, letterSpacing: .2, fontWeight: FontWeight.w700),
+          ),
+        ),
+        16.verticalSpace,
+        Image.asset("assets/images/ad_image.png"),
       ],
     );
   }
