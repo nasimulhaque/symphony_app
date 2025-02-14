@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:symphony_app/app/GlobalBackground.dart';
@@ -15,7 +16,9 @@ class Homepage extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
             child: Column(
               children: [
-                header()
+                header(),
+                24.verticalSpace,
+                Image.asset("assets/images/hero_image.png"), // Hero section
               ],
             ),
           ),
