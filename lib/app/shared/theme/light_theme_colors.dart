@@ -12,7 +12,7 @@ class LightThemeColors {
   static const Color appBarColor = primaryColor;
 
   //SCAFFOLD
-  static const Color scaffoldBackgroundColor = Colors.white;
+  static const Color scaffoldBackgroundColor = Colors.transparent;
   static const Color backgroundColor = Colors.white;
   static const Color dividerColor = Color(0xff686868);
   static const Color cardColor = Color(0xfffafafa);

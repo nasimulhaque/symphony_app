@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:symphony_app/app/routes/app_pages.dart';
 
@@ -31,6 +32,12 @@ class MyApp extends StatelessWidget {
           builder: (context, widget) {
             // bool themeIsLight = MySharedPref.getThemeIsLight();
             bool themeIsLight = MediaQuery.of(context).platformBrightness == Brightness.light;
+            SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+              statusBarColor: Colors.white,
+              statusBarIconBrightness: Brightness.dark,
+              systemNavigationBarColor: themeIsLight ? Colors.white : Colors.black,
+              systemNavigationBarIconBrightness: themeIsLight ? Brightness.dark : Brightness.light,
+            ));
             return Theme(
               data: MyTheme.getThemeData(isLight: themeIsLight),
               child: MediaQuery(
