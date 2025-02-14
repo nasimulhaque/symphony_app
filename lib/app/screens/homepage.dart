@@ -26,7 +26,9 @@ class Homepage extends StatelessWidget {
                 24.verticalSpace,
                 trending(),
                 24.verticalSpace,
-                entertainment()
+                entertainment(),
+                24.verticalSpace,
+                eWarranty(context),
               ],
             ),
           ),
@@ -163,6 +165,100 @@ class Homepage extends StatelessWidget {
         ),
         16.verticalSpace,
         Image.asset("assets/images/ad_image.png"),
+      ],
+    );
+  }
+
+  Widget eWarranty(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'E-warranty card',
+          style: GoogleFonts.urbanist(
+            textStyle: TextStyle(color: Colors.black, fontSize: 18, letterSpacing: .2, fontWeight: FontWeight.w700),
+          ),
+        ),
+        16.verticalSpace,
+        Container(
+          width: 344.w,
+          height: 92.h,
+          padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+          decoration: BoxDecoration(
+            color: Color(0xFF1F2022),
+            borderRadius: BorderRadius.circular(12.0)
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  Container(
+                    width: 38.w,
+                    height: 68.h,
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.secondary,
+                      borderRadius: BorderRadius.circular(4.0),
+                      image: DecorationImage(
+                        image: AssetImage("assets/images/helio_body.png"),
+                        fit: BoxFit.cover,
+                      )
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          width: 3,
+                          height: 3,
+                          margin: EdgeInsets.symmetric(vertical: 2.0),
+                          decoration: BoxDecoration(
+                            color: Color(0xFF1F2022),
+                            borderRadius: BorderRadius.circular(20.0)
+                          ),
+                        ),
+                        Text(
+                          "Helio",
+                          style: GoogleFonts.urbanist(
+                            textStyle: TextStyle(color: Colors.white, fontSize: 8, letterSpacing: .2, fontWeight: FontWeight.w700),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 3,
+                          height: 3,
+                        )
+                      ],
+                    ),
+                  ),
+                  16.horizontalSpace,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Helio 50",
+                        style: GoogleFonts.urbanist(
+                          textStyle: TextStyle(color: Colors.white, fontSize: 16, letterSpacing: .2, fontWeight: FontWeight.w700),
+                        ),
+                      ),
+                      Text(
+                        "Valid for 406 Days",
+                        style: GoogleFonts.urbanist(
+                          textStyle: TextStyle(color: Colors.white60, fontSize: 12, letterSpacing: .2, fontWeight: FontWeight.w700),
+                        ),
+                      ),
+                      Text(
+                        "Expiry Date: December 10, 2024",
+                        style: GoogleFonts.lato(
+                          textStyle: TextStyle(color: Colors.white60, fontSize: 12, letterSpacing: .2, fontWeight: FontWeight.w400),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Icon(Icons.arrow_forward_ios, color: Theme.of(context).colorScheme.secondary, size: 14.0)
+            ],
+          ),
+        ),
       ],
     );
   }
