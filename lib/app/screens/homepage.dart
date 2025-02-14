@@ -31,6 +31,8 @@ class Homepage extends StatelessWidget {
                 eWarranty(context),
                 24.verticalSpace,
                 gameList(context),
+                24.verticalSpace,
+                community()
               ],
             ),
           ),
@@ -316,6 +318,29 @@ class Homepage extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+
+  Widget community() {
+    return Container(
+      width: 344.w,
+      height: 128.h,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10.0),
+        image: DecorationImage(
+          image: AssetImage("assets/images/community_banner_bg.png"),
+          fit: BoxFit.cover,
+        )
+      ),
+      child: Center(
+        child: Text(
+          "JOIN SOCIAL COMMUNITY",
+          style: GoogleFonts.urbanist(
+            textStyle: TextStyle(color: Colors.white, fontSize: 20, letterSpacing: .2, fontWeight: FontWeight.w600),
+          ),
+        ),
+      ),
     );
   }
 }
