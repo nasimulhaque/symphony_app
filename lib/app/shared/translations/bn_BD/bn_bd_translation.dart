@@ -1,0 +1,26 @@
+import '../strings_enum.dart';
+
+final Map<String, String> bnBD = {
+  Strings.appName: 'সিম্ফনি',
+  Strings.changeTheme: 'থিম পরিবর্তন',
+  Strings.changeLanguage: 'ভাষা পরিবর্তন',
+  Strings.noInternetConnection: 'ইন্টারনেট সংযোগ নেই',
+  Strings.serverNotResponding: 'সার্ভার থেকে রেস্পন্স পাওয়া যায়নি',
+  Strings.someThingWentWorng: 'কিছু একটা ত্রুটি হয়েছে',
+  Strings.apiNotFound: 'রাঊট পাওয়া যায়নি',
+  Strings.serverError: 'সার্ভার ত্রুটি',
+  Strings.urlNotFound: 'লিঙ্কটি ভ্যালিড নয়',
+  Strings.userNotFound: 'ইউজার ভ্যালিড নয়',
+  Strings.userExists: 'ইউজার ইতিমধ্যে রেজিস্ট্রেশন হয়েছে',
+  Strings.usernameRequired: 'ইউজারনেম আবশ্যক',
+  Strings.usernameLimit: 'ইউজারনেম ৪ থেকে ১৬ ক্যারেক্টারের মাঝে দিন',
+  Strings.pinRequired: 'পিন আবশ্যক',
+  Strings.pinLimit: '৫ সংখ্যার পিন নম্বর দিন',
+  Strings.pinShouldBeDifferent: 'নতুন পিন পুরোনো পিন থেকে ভিন্ন দিন',
+  Strings.pinNotMatched: 'পিন সঠিক নয়',
+  Strings.viewAll: 'বিস্তারিত',
+  Strings.loading: 'লোডিং',
+  Strings.retry: 'পুনরায় চেষ্টা করুন',
+  Strings.internetError: 'ত্রুটি হয়েছে, পুনরায় চেষ্টা করুন। ⚠️',
+  Strings.close: 'বন্ধ করুন',
+};
