@@ -19,6 +19,8 @@ class Homepage extends StatelessWidget {
                 header(),
                 24.verticalSpace,
                 Image.asset("assets/images/hero_image.png"), // Hero section
+                24.verticalSpace,
+                support(context),
               ],
             ),
           ),
@@ -40,6 +42,52 @@ class Homepage extends StatelessWidget {
         ),
         SvgPicture.asset("assets/vectors/menu.svg")
       ],
+    );
+  }
+
+  Widget support(BuildContext context) {
+    return Container(
+      width: 344.w,
+      height: 128.h,
+      padding: EdgeInsets.symmetric(horizontal: 16.0),
+      decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.secondary,
+          borderRadius: BorderRadius.circular(16.0),
+          image: DecorationImage(
+            image: AssetImage("assets/images/pattern.png"),
+            fit: BoxFit.cover,
+          )
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              SvgPicture.asset("assets/vectors/headphone_icon.svg"),
+              8.horizontalSpace,
+              Text(
+                "Need Help",
+                style: GoogleFonts.urbanist(
+                  textStyle: TextStyle(color: Colors.white, fontSize: 16, letterSpacing: .2, fontWeight: FontWeight.w600),
+                ),
+              ),
+            ],
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(8.0),
+            ),
+            child: Text(
+              "Check Support",
+              style: GoogleFonts.urbanist(
+                textStyle: TextStyle(color: Colors.black, fontSize: 16, letterSpacing: .2, fontWeight: FontWeight.w500),
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
