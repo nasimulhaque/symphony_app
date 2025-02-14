@@ -8,6 +8,7 @@ class GlobalBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(bottom: 32.0),
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [Color(0xFFF1F7FF), Color(0xFFF6F6F6)],
