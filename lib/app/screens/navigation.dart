@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:symphony_app/app/routes/app_pages.dart';
 import 'package:symphony_app/app/screens/homepage.dart';
@@ -27,8 +28,17 @@ class _NavigationScreenState extends State<NavigationScreen> {
   List<PersistentBottomNavBarItem> _navBarsItems() {
     return [
       PersistentBottomNavBarItem(
-        icon: Icon(CupertinoIcons.group),
-        title: ("Website"),
+        icon: Builder(
+          builder: (context) {
+            final isSelected = _selectedIndex == 0;
+            return SvgPicture.asset(
+              'assets/vectors/nav_icon_web.svg',
+              colorFilter: ColorFilter.mode(isSelected ? Theme.of(context).colorScheme.secondary : CupertinoColors.systemGrey, BlendMode.srcIn),
+            );
+          },
+        ),
+        title: "Website",
+        contentPadding: 0.0,
         activeColorPrimary: Theme.of(context).colorScheme.secondary,
         inactiveColorPrimary: CupertinoColors.systemGrey,
         routeAndNavigatorSettings: RouteAndNavigatorSettings(
@@ -36,8 +46,17 @@ class _NavigationScreenState extends State<NavigationScreen> {
         ),
       ),
       PersistentBottomNavBarItem(
-        icon: Icon(CupertinoIcons.home),
-        title: ("Home"),
+        icon: Builder(
+          builder: (context) {
+            final isSelected = _selectedIndex == 1;
+            return SvgPicture.asset(
+              'assets/vectors/nav_icon_home.svg',
+              colorFilter: ColorFilter.mode(isSelected ? Theme.of(context).colorScheme.secondary : CupertinoColors.systemGrey, BlendMode.srcIn),
+            );
+          },
+        ),
+        title: "Home",
+        contentPadding: 0.0,
         activeColorPrimary: Theme.of(context).colorScheme.secondary,
         inactiveColorPrimary: CupertinoColors.systemGrey,
         routeAndNavigatorSettings: RouteAndNavigatorSettings(
@@ -46,8 +65,17 @@ class _NavigationScreenState extends State<NavigationScreen> {
         ),
       ),
       PersistentBottomNavBarItem(
-        icon: Icon(CupertinoIcons.profile_circled),
-        title: ("Social"),
+        icon: Builder(
+          builder: (context) {
+            final isSelected = _selectedIndex == 2;
+            return SvgPicture.asset(
+              'assets/vectors/nav_icon_social.svg',
+              colorFilter: ColorFilter.mode(isSelected ? Theme.of(context).colorScheme.secondary : CupertinoColors.systemGrey, BlendMode.srcIn),
+            );
+          },
+        ),
+        title: "Social",
+        contentPadding: 0.0,
         activeColorPrimary: Theme.of(context).colorScheme.secondary,
         inactiveColorPrimary: CupertinoColors.systemGrey,
         routeAndNavigatorSettings: RouteAndNavigatorSettings(
@@ -58,6 +86,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
   }
 
   late PersistentTabController _controller;
+  int _selectedIndex = 1;
 
   @override
   void initState() {
@@ -101,6 +130,11 @@ class _NavigationScreenState extends State<NavigationScreen> {
       bottomScreenMargin: 24.0,
       navBarHeight: kBottomNavigationBarHeight,
       navBarStyle: NavBarStyle.style6,
+      onItemSelected: (index) {
+        setState(() {
+          _selectedIndex = index;
+        });
+      },
     );
   }
 }
