@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:symphony_app/app/shared/utils/app_logger.dart';
 
 class GlobalBackground extends StatelessWidget {
-  final Widget child;
 
-  const GlobalBackground({super.key, required this.child});
+  final Widget child;
+  bool addPadding = true;
+
+  GlobalBackground({super.key, required this.child, this.addPadding = true});
 
   @override
   Widget build(BuildContext context) {
+    AppLogger.instance.debug("ADD $addPadding");
     return SafeArea(
       child: Container(
-        padding: EdgeInsets.only(bottom: 32.0),
+        padding: addPadding ? EdgeInsets.only(bottom: 32.0) : null,
         decoration: MediaQuery.of(context).platformBrightness == Brightness.light
         ? const BoxDecoration(
           gradient: LinearGradient(
