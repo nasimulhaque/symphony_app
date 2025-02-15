@@ -53,6 +53,7 @@ class SpecificationScreen extends StatelessWidget {
   Widget item1() {
     return Container(
       width: double.infinity,
+      margin: EdgeInsets.symmetric(horizontal: 16.0),
       decoration: BoxDecoration(
         color: Colors.white10,
         borderRadius: BorderRadius.circular(16.0)
@@ -169,7 +170,7 @@ class SpecificationScreen extends StatelessWidget {
           StaggeredGridTile.count(
             crossAxisCellCount: 2,
             mainAxisCellCount: 1,
-            child: squareItem(icon: "assets/vectors/square-arrow-diagonal.svg", title: "Display", description: '6.7" FHD+ AMOLED GG5 120Hz\nPunch Hole'),
+            child: squareItem(icon: "assets/vectors/square-arrow-diagonal-02.svg", title: "Display", description: '6.7" FHD+ AMOLED GG5 120Hz\nPunch Hole'),
           ),
           StaggeredGridTile.count(
             crossAxisCellCount: 1,
