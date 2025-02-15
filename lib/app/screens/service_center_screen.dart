@@ -98,14 +98,14 @@ class ServiceCenterScreen extends StatelessWidget {
         Text(
           title,
           style: GoogleFonts.urbanist(
-            textStyle: TextStyle(color: Theme.of(context).colorScheme.inversePrimary, fontSize: 18, letterSpacing: .2, fontWeight: FontWeight.w700),
+            textStyle: TextStyle(color: themeIsLight ? Color(0xFF1F2022) : Colors.white, fontSize: 18, letterSpacing: .2, fontWeight: FontWeight.w700),
           ),
         ),
         SizedBox(height: 16),
         Text(
           description,
           style: GoogleFonts.urbanist(
-            textStyle: TextStyle(color: Theme.of(context).colorScheme.inversePrimary, fontSize: 16, letterSpacing: .2, fontWeight: FontWeight.w500),
+            textStyle: TextStyle(color: themeIsLight ? Color(0xFF1F2022) : Color(0xFFD1D1D1), fontSize: 16, letterSpacing: .2, fontWeight: FontWeight.w500),
           ),
         ),
         SizedBox(height: 10),
