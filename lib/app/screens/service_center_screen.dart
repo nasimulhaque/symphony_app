@@ -51,7 +51,12 @@ class ServiceCenterScreen extends StatelessWidget {
   Widget _buildPanelContent(BuildContext context) {
     bool themeIsLight = MediaQuery.of(context).platformBrightness == Brightness.light;
     return Container(
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.only(
+        top: 20,
+        left: 20,
+        right: 20,
+        bottom: 40
+      ),
       child: Column(
         children: [
           Container(
@@ -65,7 +70,7 @@ class ServiceCenterScreen extends StatelessWidget {
           SizedBox(height: 12),
           Expanded(
             child: ListView.separated(
-              itemCount: 10,
+              itemCount: 3,
               itemBuilder: (context, index) {
                 return locationItem(
                   context,
