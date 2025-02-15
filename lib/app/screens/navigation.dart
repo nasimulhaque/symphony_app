@@ -126,6 +126,15 @@ class _NavigationScreenState extends State<NavigationScreen> {
           topLeft: Radius.circular(32),
           topRight: Radius.circular(32),
         ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withAlpha(51), // Shadow color
+            blurRadius: 12, // How much the shadow spreads
+            spreadRadius: 4, // The intensity of the shadow
+            offset: Offset(0, 3), // Position of the shadow
+          ),
+        ],
+        colorBehindNavBar: Colors.white,
       ),
       bottomScreenMargin: 24.0,
       navBarHeight: kBottomNavigationBarHeight,

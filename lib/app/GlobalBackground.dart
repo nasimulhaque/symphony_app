@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:symphony_app/app/shared/utils/app_logger.dart';
 
 class GlobalBackground extends StatelessWidget {
 
@@ -10,7 +9,6 @@ class GlobalBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppLogger.instance.debug("ADD $addPadding");
     return SafeArea(
       child: Container(
         padding: addPadding ? EdgeInsets.only(bottom: 32.0) : null,
