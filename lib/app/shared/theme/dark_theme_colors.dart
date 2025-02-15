@@ -28,7 +28,7 @@ class DarkThemeColors {
   static const Color buttonDisabledTextColor = Colors.black;
 
   //TEXT
-  static const Color bodyTextColor = Colors.white70;
+  static const Color bodyTextColor = Colors.white;
   static const Color displayTextColor = Colors.white;
   static const Color bodySmallTextColor = Color(0xff7C7C7C);
   static const Color hintTextColor = Color(0xff686868);

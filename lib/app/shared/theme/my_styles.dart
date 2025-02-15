@@ -25,6 +25,11 @@ class MyStyles {
       letterSpacing: .2, fontWeight: FontWeight.w700,
       color: isLightTheme ? LightThemeColors.bodyTextColor : DarkThemeColors.bodyTextColor,
     ),
+    labelMedium: MyFonts.buttonTextStyle.copyWith(
+      fontSize: MyFonts.bodyLargeSize,
+      letterSpacing: .2, fontWeight: FontWeight.w500,
+      color: isLightTheme ? LightThemeColors.bodyTextColor : DarkThemeColors.bodyTextColor,
+    ),
     bodyLarge: (MyFonts.bodyTextStyle).copyWith(
       fontWeight: FontWeight.bold,
       fontSize: MyFonts.bodyLargeSize,
